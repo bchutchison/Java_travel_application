@@ -12,7 +12,6 @@ public enum PlaneType {
     PlaneType(int passengerCapacity, int weightCapacity) {
         this.passengerCapacity = passengerCapacity;
         this.weightCapacity = weightCapacity;
-
     }
 
     public int getPassengerCapacity() {
