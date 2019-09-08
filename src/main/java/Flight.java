@@ -9,7 +9,7 @@ public class Flight {
     private String departureTime;
 
 
-    public Flight() {
+    public Flight(String flightNumber, String destinationAirport, String departureAirport, String departureTime) {
         this.passengers = new ArrayList<Passenger>();
         this.flightNumber = flightNumber;
         this.destinationAirport = destinationAirport;
@@ -17,15 +17,50 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+    public String getDestinationAirport() {
+        return destinationAirport;
+    }
+
+    public void setDestinationAirport(String destinationAirport) {
+        this.destinationAirport = destinationAirport;
+    }
+
+    public String getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public void setDepartureAirport(String departureAirport) {
+        this.departureAirport = departureAirport;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
+    }
+
     public int passengerCount() {
         return this.passengers.size();
     }
 
-    public void addPassengerToFlight(Passenger passenger) {
+    public int returnAvailableSeats(Plane plane) {
+        return plane.getPassengerCapacity();
+    }
+
+    public void addPassengerToFlight(Passenger passenger, Plane plane) {
+        if (returnAvailableSeats(plane) > passengerCount())
         this.passengers.add(passenger);
     }
 
-//    public void returnAvailableSeats(Plane plane) {
-//        this.plane.getPassengerCapacity();
-//    }
 }

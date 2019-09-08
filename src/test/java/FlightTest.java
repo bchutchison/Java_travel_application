@@ -12,7 +12,7 @@ public class FlightTest {
     @Before
     public void before() {
         passenger = new Passenger("Jo", 1);
-        flight = new Flight();
+        flight = new Flight("FR756", "GLA", "EDI", "10h00");
         plane = new Plane(PlaneType.BOEING747);
     }
 
@@ -23,15 +23,40 @@ public class FlightTest {
 
     @Test
     public void testBookPassengerOntoFlight() {
-        flight.addPassengerToFlight(passenger);
+        flight.addPassengerToFlight(passenger, plane);
         assertEquals(1, flight.passengerCount());
     }
 
-//    @Test
-//    public void testReturnAvailableSeats() {
-//        flight.returnAvailableSeats(plane);
-//        assertEquals(20, flight.passengerCount());
-//    }
+    @Test
+    public void testDoesNotBookPassengerOntoFlight() {
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        assertEquals(20, flight.passengerCount());
+    }
+
+    @Test
+    public void testReturnAvailableSeats() {
+        assertEquals(20, flight.returnAvailableSeats(plane));
+    }
 
 
 
