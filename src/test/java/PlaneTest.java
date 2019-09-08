@@ -13,10 +13,10 @@ public class PlaneTest {
     @Test
     public void planeHasType() { assertEquals(PlaneType.BOEING747, plane.getPlaneType());}
 
-     @Test
+    @Test
     public void planeHasPassengerCapacity() { assertEquals(20, plane.getPassengerCapacity());}
 
-     @Test
+    @Test
     public void planeHasWeightCapacity() { assertEquals(300, plane.getWeightCapacity());}
 
 }

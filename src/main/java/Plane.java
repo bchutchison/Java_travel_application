@@ -11,10 +11,12 @@ public class Plane {
     }
 
     public int getPassengerCapacity() {
+
         return this.planeType.getPassengerCapacity();
     }
 
     public int getWeightCapacity() {
+
         return this.planeType.getWeightCapacity();
     }
 
