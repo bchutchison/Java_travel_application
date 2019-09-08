@@ -21,6 +21,13 @@ public class FlightTest {
         assertEquals(0, flight.passengerCount());
     }
 
+    @Test //return total passenger bags
+    public void testNumberOfBagsBooked() {
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        assertEquals(2, flight.returnNumberOfBags());
+    }
+
     @Test
     public void testBookPassengerOntoFlight() {
         flight.addPassengerToFlight(passenger, plane);
@@ -51,12 +58,16 @@ public class FlightTest {
         flight.addPassengerToFlight(passenger, plane);
         flight.addPassengerToFlight(passenger, plane);
         assertEquals(20, flight.passengerCount());
+
     }
 
     @Test
-    public void testReturnAvailableSeats() {
-        assertEquals(20, flight.returnAvailableSeats(plane));
+    public void testReturnNumberOfRemainingSeats() {
+        flight.addPassengerToFlight(passenger, plane);
+        flight.addPassengerToFlight(passenger, plane);
+        assertEquals(18, flight.returnNumberOfRemainingSeats(plane));
     }
+
 
 
 

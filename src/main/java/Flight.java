@@ -54,13 +54,26 @@ public class Flight {
         return this.passengers.size();
     }
 
+
     public int returnAvailableSeats(Plane plane) {
         return plane.getPassengerCapacity();
+    }
+
+    public int returnNumberOfRemainingSeats(Plane plane) {
+        return plane.getPassengerCapacity() - passengerCount();
     }
 
     public void addPassengerToFlight(Passenger passenger, Plane plane) {
         if (returnAvailableSeats(plane) > passengerCount())
         this.passengers.add(passenger);
+    }
+
+    public int returnNumberOfBags() {
+        int bagTotal = 0;
+        for (Passenger passenger: this.passengers){
+            bagTotal += passenger.getBags();
+        }
+        return bagTotal;
     }
 
 }
